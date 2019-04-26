@@ -1,0 +1,12 @@
+Review comments and additions:-
+
+1. Earlier only test scripts existed without the use of page objects hence updated the code using Page Object Model along with Page Factory
+hence making to code easy to understand, reusable and maintainable in further stages of framework development.
+
+2. Added a base class havings a setup() to initialize WebDriver, setting ChromeOptions to accept browser notifications
+Added a loadURL() to load any generic url.
+Added a tearDown() to close all tests after execution.
+
+3. Added the latest ChromeDriver.exe for latest Chrome support as certain methods like sendKeys() did not work with latest Chrome(73.0)
+
+4. Added testng.xml file for running all tests together.
