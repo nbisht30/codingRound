@@ -1,5 +1,8 @@
 package scripts;
 
+import java.time.LocalDate;
+import java.time.Month;
+
 import org.testng.annotations.Test;
 
 import pageobjects.FlightsResults;
@@ -12,9 +15,10 @@ public class FlightBookingTest extends Base {
 		loadURL("https://www.cleartrip.com/");
 		FlightsSearchPage flightSearch = new FlightsSearchPage();
 		flightSearch.selectOneWay();
-		flightSearch.setSource("Bangalore");
+		flightSearch.setOrigin("Bangalore");
 		flightSearch.setDestination("Delhi");
-		flightSearch.clickDate();
+		LocalDate jnyDate = LocalDate.of(2023, Month.MARCH, 30);
+		flightSearch.clickDate(jnyDate);
 		FlightsResults resultsPage = flightSearch.clickSearchButton();
 		resultsPage.isSummaryPresent();
 	}
